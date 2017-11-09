@@ -10,7 +10,7 @@ import UIKit
 
 class VGLabelButton: UIButton {
 
-    fileprivate var componentIndex: Int = 0
-    fileprivate var url: URL?
+    internal var componentIndex: Int = 0
+    internal var url: URL?
 }
 

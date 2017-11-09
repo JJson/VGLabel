@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		333A9E341FB2D78F006A96A1 /* VGStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */; };
 		338EA7721FB18EF40029AD8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7711FB18EF40029AD8F /* AppDelegate.swift */; };
 		338EA7741FB18EF40029AD8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7731FB18EF40029AD8F /* ViewController.swift */; };
 		338EA7771FB18EF40029AD8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338EA7751FB18EF40029AD8F /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 		338EA7A11FB18F7C0029AD8F /* VGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7A01FB18F7C0029AD8F /* VGLabel.swift */; };
 		338EA7A31FB191C10029AD8F /* VGLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7A21FB191C10029AD8F /* VGLabelButton.swift */; };
 		338EA7A51FB193140029AD8F /* VGLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7A41FB193140029AD8F /* VGLabelComponent.swift */; };
+		33FD6BF91FB424A80022AE02 /* CFArray+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGStringExtensions.swift; sourceTree = "<group>"; };
 		338EA76E1FB18EF40029AD8F /* VGLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338EA7711FB18EF40029AD8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		338EA7731FB18EF40029AD8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		338EA7A01FB18F7C0029AD8F /* VGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabel.swift; sourceTree = "<group>"; };
 		338EA7A21FB191C10029AD8F /* VGLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelButton.swift; sourceTree = "<group>"; };
 		338EA7A41FB193140029AD8F /* VGLabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelComponent.swift; sourceTree = "<group>"; };
+		33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CFArray+Sequence.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				338EA7A01FB18F7C0029AD8F /* VGLabel.swift */,
 				338EA7A21FB191C10029AD8F /* VGLabelButton.swift */,
 				338EA7A41FB193140029AD8F /* VGLabelComponent.swift */,
+				333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */,
+				33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -277,10 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				338EA7741FB18EF40029AD8F /* ViewController.swift in Sources */,
+				333A9E341FB2D78F006A96A1 /* VGStringExtensions.swift in Sources */,
 				338EA7A11FB18F7C0029AD8F /* VGLabel.swift in Sources */,
 				338EA7A51FB193140029AD8F /* VGLabelComponent.swift in Sources */,
 				338EA7721FB18EF40029AD8F /* AppDelegate.swift in Sources */,
 				338EA7A31FB191C10029AD8F /* VGLabelButton.swift in Sources */,
+				33FD6BF91FB424A80022AE02 /* CFArray+Sequence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

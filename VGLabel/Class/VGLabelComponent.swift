@@ -9,27 +9,27 @@
 import Foundation
 
 public class VGLabelComponent: NSObject {
-    fileprivate var componentIndex: Int = 0
-    fileprivate var text: String = ""
-    fileprivate var tagLabel: String?
-    fileprivate var attributes: [NSAttributedStringKey: Any]?
-    fileprivate var position: Int = 0
+    internal var componentIndex: Int = 0
+    internal var text: String = ""
+    internal var tagLabel: String?
+    internal var attributes: [String: String]?
+    internal var position: Int = 0
     
-    class func compomemt(_ text: String, tag: String, attributes: [NSAttributedStringKey: Any]) -> VGLabelComponent {
+    class func compomemt(_ text: String, tag: String, attributes: [String: String]) -> VGLabelComponent {
         return VGLabelComponent(text, tag: tag, attributes: attributes)
     }
     
-    init(_ text: String, tag: String, attributes: [NSAttributedStringKey: Any]) {
+    init(_ text: String, tag: String, attributes: [String: String]) {
         self.text = text
         self.attributes = attributes
         tagLabel = tag
     }
     
-    class func compomemt(_ tag: String, position: Int, attributes: [NSAttributedStringKey: Any]) -> VGLabelComponent {
+    class func compomemt(_ tag: String, position: Int, attributes: [String: String]) -> VGLabelComponent {
         return VGLabelComponent(tag, position: position, attributes: attributes)
     }
     
-    init(_ tag: String, position: Int, attributes: [NSAttributedStringKey: Any]) {
+    init(_ tag: String, position: Int, attributes: [String: String]) {
         self.attributes = attributes
         self.position = position
         tagLabel = tag
@@ -59,4 +59,50 @@ public class VGLabelExtractedComponent: NSObject {
         extractedComponent.plainText = plainText
         return extractedComponent
     }
+    
+    class func extractTextStyle(_ data: String, paragraphReplacement: String) {
+        var text: NSString? = nil
+        var tag: String? = nil
+        var styleData = ""
+        
+        var components = [VGLabelComponent]()
+        let lastPosition = 0
+        var scanner = Scanner(string: data)
+        
+        while !scanner.isAtEnd {
+            scanner.scanUpTo("<", into: nil)
+            scanner.scanUpTo(">", into: &text)
+            
+            let delimiter = String(format: "%@>", text!)
+            let position = data.range(of: delimiter)?.lowerBound.encodedOffset
+            
+            if position != NSNotFound {
+//                if delimiter.range(of: "<p")?.lowerBound.encodedOffset == 0 {
+//                    styleData = data.replacingOccurrences(of: delimiter, with: paragraphReplacement, options: .caseInsensitive, range: )
+//                }
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
