@@ -37,21 +37,31 @@ public enum VGLineBreakMode: UInt8 {
 }
 
 public protocol VGLabelDelegate: class {
-    func vgLabel(_ label: VGLabel, didSelectLink URL: URL?)
+    func vgLabel(_ label: VGLabel, didSelectLink url: URL?)
 }
 
 public extension VGLabelDelegate {
-    func vgLabel(_ label: VGLabel, didSelectLink URL: URL?) {}
+    func vgLabel(_ label: VGLabel, didSelectLink url: URL?) {}
 }
 
 open class VGLabel: UIView {
-    open var text: String
+    open var text: String {
+        willSet {
+            self.text = newValue.replacingOccurrences(of: "<br>", with: "\n")
+            let component = VGLabelExtractedComponent.extractTextStyle(self.text, paragraphReplacement: self.paragraphReplacement)
+            textComponents = component.textComponents
+            plainText = component.plainText
+            setNeedsDisplay()
+        }
+    }
     open var plainText: String?
     open var highlightedText: String? {
         willSet {
             self.highlightedText = newValue?.replacingOccurrences(of: "<br>", with: "\n")
-//            let component =
-            
+            if let highlightedText = self.highlightedText {
+              let extractedComponent = VGLabelExtractedComponent.extractTextStyle(highlightedText, paragraphReplacement: self.paragraphReplacement)
+                highlightedTextComponents = extractedComponent.textComponents
+            }
         }
     }
     open var textColor: UIColor
@@ -68,16 +78,17 @@ open class VGLabel: UIView {
         }
     }
     
+    fileprivate var _optimumSize: CGSize?
     open var optimumSize: CGSize? {
         get {
             render()
-            return self.optimumSize
+            return _optimumSize
         }
-        
         set {
-            self.optimumSize = newValue
+           _optimumSize = newValue
         }
     }
+    
     open var lineBreakMode: VGLineBreakMode {
         didSet {
             setNeedsDisplay()
@@ -130,6 +141,8 @@ open class VGLabel: UIView {
     }
     
     open override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        let currentContext = UIGraphicsGetCurrentContext()
         render()
     }
     
@@ -154,15 +167,19 @@ open class VGLabel: UIView {
         
         // Initialize an attributed string.
         let string: CFString = plainText! as CFString
+        
         let attributedString: CFMutableAttributedString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0)
-        CFAttributedStringReplaceString(attributedString, CFRangeMake(0, 0), string)
-        let styleDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, [kCFTypeDictionaryKeyCallBacks], [kCFTypeDictionaryValueCallBacks])
+        
+        CFAttributedStringReplaceString(attributedString, CFRange(location: 0, length: 0), string)
+        
+        let styleDictionary = CFDictionaryCreateMutable(nil, 0, [kCFCopyStringDictionaryKeyCallBacks], [kCFTypeDictionaryValueCallBacks])
         
         // Create a color and add it as an attribute to the string.
         // Core Foundation objects returned from annotated APIs are automatically memory managed in Swift—you do not need to invoke the CFRetain, CFRelease, or CFAutorelease functions yourself.
         // https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/WorkingWithCocoaDataTypes.html  Memory Managed Objects
         
-        CFDictionaryAddValue(styleDictionary, [kCTForegroundColorAttributeName], [self.textColor.cgColor])
+        CFDictionaryAddValue(styleDictionary, Unmanaged.passUnretained(kCTForegroundColorAttributeName).toOpaque(), Unmanaged.passUnretained(self.textColor.cgColor).toOpaque())
+        
         CFAttributedStringSetAttributes(attributedString, CFRangeMake(0, CFAttributedStringGetLength(attributedString)), styleDictionary, false)
         
         applyParagraphStyle(text: attributedString, attributes: nil, position: 0, length: CFAttributedStringGetLength(attributedString))
@@ -267,12 +284,13 @@ open class VGLabel: UIView {
                         var origin = CGPoint()
                         CTFrameGetLineOrigins(frame, CFRange(location: index, length: 1), &origin)
                         
-                        if linkableComponent.position < lineRange.location &&
-                        linkableComponent.position + linkableComponent.text.characters.count > lineRange.location ||
-                            linkableComponent.position >= lineRange.location && linkableComponent.position < lineRange.location + lineRange.length {
+                        if (linkableComponent.position < lineRange.location &&
+                        linkableComponent.position + linkableComponent.text.characters.count > lineRange.location) ||
+                            (linkableComponent.position >= lineRange.location && linkableComponent.position < lineRange.location + lineRange.length) {
                             var secondaryOffset: CGFloat = 0.0
-                            let primaryOffset = CTLineGetOffsetForStringIndex(CFArrayGetValueAtIndex(frameLines, index) as! CTLine, linkableComponent.position, &secondaryOffset)
-                            let primaryOffset2 = CTLineGetOffsetForStringIndex(CFArrayGetValueAtIndex(frameLines, index) as! CTLine, linkableComponent.position + linkableComponent.text.characters.count, nil)
+                            let line: CTLine = unsafeBitCast(CFArrayGetValueAtIndex(frameLines, index), to: CTLine.self)
+                            let primaryOffset = CTLineGetOffsetForStringIndex(line, linkableComponent.position, &secondaryOffset)
+                            let primaryOffset2 = CTLineGetOffsetForStringIndex(line, linkableComponent.position + linkableComponent.text.characters.count, nil)
                             
                             let buttonWidth = primaryOffset2 - primaryOffset
                             let button = VGLabelButton(frame: CGRect(x: primaryOffset + origin.x, y: height, width: buttonWidth, height: ascent + descent))
@@ -295,28 +313,30 @@ open class VGLabel: UIView {
                 }
             }
             visibleRange = CTFrameGetVisibleStringRange(frame)
-            CTFrameDraw(frame, currentContext!)
+            if let context = currentContext {
+                CTFrameDraw(frame, context)
+            }
         }
     }
     
     // MARK: styling
     public func applyParagraphStyle(text: CFMutableAttributedString, attributes: [String: String]?, position: Int, length: Int) {
         
-        let styleDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, [kCFTypeDictionaryKeyCallBacks], [kCFTypeDictionaryValueCallBacks])
+        let styleDictionary = CFDictionaryCreateMutable(nil, 0, [kCFCopyStringDictionaryKeyCallBacks], [kCFTypeDictionaryValueCallBacks])
         
-        let direction: CTWritingDirection = .leftToRight
+        var direction: CTWritingDirection = .leftToRight
         
         var firstLineIndent: CGFloat = 0.0
-        let headIndent: CGFloat = 0.0
-        let tailIndent: CGFloat = 0.0
-        let lineHeightMultiple: CGFloat = 1.0
-        let maximumLineHeight: CGFloat = 0.0
-        let minimumLineHeight: CGFloat = 0.0
-        let paragraphSpacing: CGFloat = 0.0
-        let paragraphSpacingBefore: CGFloat = 0.0
+        var headIndent: CGFloat = 0.0
+        var tailIndent: CGFloat = 0.0
+        var lineHeightMultiple: CGFloat = 1.0
+        var maximumLineHeight: CGFloat = 0.0
+        var minimumLineHeight: CGFloat = 0.0
+        var paragraphSpacing: CGFloat = 0.0
+        var paragraphSpacingBefore: CGFloat = 0.0
         var textAlignment: CTTextAlignment = CTTextAlignment(rawValue: self.textAlignment.rawValue)!
         var lineBreakMode: CTLineBreakMode = CTLineBreakMode(rawValue: self.lineBreakMode.rawValue)!
-        let lineSpacing: CGFloat = self.lineSpacing
+        var lineSpacing: CGFloat = self.lineSpacing
 
         if let attr = attributes {
             let keys = Array(attr.keys)
@@ -350,64 +370,64 @@ open class VGLabel: UIView {
                     }
                 }
         }
-            
-            let styleSettings: [CTParagraphStyleSetting] = [
-                CTParagraphStyleSetting(spec: .alignment, valueSize: MemoryLayout<CTTextAlignment>.size, value: [textAlignment]),
-                CTParagraphStyleSetting(spec: .lineBreakMode, valueSize: MemoryLayout<CTLineBreakMode>.size, value: [lineBreakMode]),
-                CTParagraphStyleSetting(spec: .baseWritingDirection, valueSize: MemoryLayout<CTWritingDirection>.size, value: [direction]),
-                CTParagraphStyleSetting(spec: .minimumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: [lineSpacing]),
-                CTParagraphStyleSetting(spec: .maximumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: [lineSpacing]),
-                CTParagraphStyleSetting(spec: .firstLineHeadIndent, valueSize: MemoryLayout<CGFloat>.size, value: [firstLineIndent]),
-                CTParagraphStyleSetting(spec: .headIndent, valueSize: MemoryLayout<CGFloat>.size, value: [headIndent]),
-                CTParagraphStyleSetting(spec: .tailIndent, valueSize: MemoryLayout<CGFloat>.size, value: [tailIndent]),
-                CTParagraphStyleSetting(spec: .lineHeightMultiple, valueSize: MemoryLayout<CGFloat>.size, value: [lineHeightMultiple]),
-                CTParagraphStyleSetting(spec: .maximumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: [maximumLineHeight]),
-                CTParagraphStyleSetting(spec: .minimumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: [minimumLineHeight]),
-                CTParagraphStyleSetting(spec: .paragraphSpacing, valueSize: MemoryLayout<CGFloat>.size, value: [paragraphSpacing]),
-                CTParagraphStyleSetting(spec: .paragraphSpacingBefore, valueSize: MemoryLayout<CGFloat>.size, value: [paragraphSpacingBefore])
-            ]
-            
-            let paragraphStyle = CTParagraphStyleCreate(styleSettings, MemoryLayout.size(ofValue: styleSettings) / MemoryLayout<CTParagraphStyleSetting>.size)
-            CFDictionaryAddValue(styleDictionary, [kCTParagraphStyleAttributeName], [paragraphStyle])
-            CFAttributedStringSetAttributes(text, CFRange(location: position, length: length), styleDictionary, false)
-        }
+    }
+        let styleSettings: [CTParagraphStyleSetting] = [
+            CTParagraphStyleSetting(spec: .alignment, valueSize: MemoryLayout<CTTextAlignment>.size, value: &textAlignment),
+            CTParagraphStyleSetting(spec: .lineBreakMode, valueSize: MemoryLayout<CTLineBreakMode>.size, value: &lineBreakMode),
+            CTParagraphStyleSetting(spec: .baseWritingDirection, valueSize: MemoryLayout<CTWritingDirection>.size, value: &direction),
+            CTParagraphStyleSetting(spec: .minimumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &lineSpacing),
+            CTParagraphStyleSetting(spec: .maximumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &lineSpacing),
+            CTParagraphStyleSetting(spec: .firstLineHeadIndent, valueSize: MemoryLayout<CGFloat>.size, value: &firstLineIndent),
+            CTParagraphStyleSetting(spec: .headIndent, valueSize: MemoryLayout<CGFloat>.size, value: &headIndent),
+            CTParagraphStyleSetting(spec: .tailIndent, valueSize: MemoryLayout<CGFloat>.size, value: &tailIndent),
+            CTParagraphStyleSetting(spec: .lineHeightMultiple, valueSize: MemoryLayout<CGFloat>.size, value: &lineHeightMultiple),
+            CTParagraphStyleSetting(spec: .maximumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: &maximumLineHeight),
+            CTParagraphStyleSetting(spec: .minimumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: &minimumLineHeight),
+            CTParagraphStyleSetting(spec: .paragraphSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &paragraphSpacing),
+            CTParagraphStyleSetting(spec: .paragraphSpacingBefore, valueSize: MemoryLayout<CGFloat>.size, value: &paragraphSpacingBefore)
+        ]
+        
+        let paragraphStyle = CTParagraphStyleCreate(styleSettings, styleSettings.count)
+        
+        CFDictionaryAddValue(styleDictionary, Unmanaged.passUnretained(kCTParagraphStyleAttributeName).toOpaque(), Unmanaged.passUnretained(paragraphStyle).toOpaque())
+        CFAttributedStringSetAttributes(text, CFRange(location: position, length: length), styleDictionary, false)
     }
     
     func applyCenterStyle(text: CFMutableAttributedString, position: Int, length: Int) {
-        let styleDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, [kCFTypeDictionaryKeyCallBacks], [kCFTypeDictionaryValueCallBacks])
+        let styleDictionary = CFDictionaryCreateMutable(nil, 0, [kCFCopyStringDictionaryKeyCallBacks], [kCFTypeDictionaryValueCallBacks])
         
-        let direction: CTWritingDirection = .leftToRight
+        var direction: CTWritingDirection = .leftToRight
         
-        let firstLineIndent: CGFloat = 0.0
-        let headIndent: CGFloat = 0.0
-        let tailIndent: CGFloat = 0.0
-        let lineHeightMultiple: CGFloat = 1.0
-        let maximumLineHeight: CGFloat = 0.0
-        let minimumLineHeight: CGFloat = 0.0
-        let paragraphSpacing: CGFloat = 0.0
-        let paragraphSpacingBefore: CGFloat = 0.0
-        let textAlignment: CTTextAlignment = .center
-        let lineBreakMode: CTLineBreakMode = CTLineBreakMode(rawValue: self.lineBreakMode.rawValue)!
-        let lineSpacing: CGFloat = self.lineSpacing
+        var firstLineIndent: CGFloat = 0.0
+        var headIndent: CGFloat = 0.0
+        var tailIndent: CGFloat = 0.0
+        var lineHeightMultiple: CGFloat = 1.0
+        var maximumLineHeight: CGFloat = 0.0
+        var minimumLineHeight: CGFloat = 0.0
+        var paragraphSpacing: CGFloat = 0.0
+        var paragraphSpacingBefore: CGFloat = 0.0
+        var textAlignment: CTTextAlignment = .center
+        var lineBreakMode: CTLineBreakMode = CTLineBreakMode(rawValue: self.lineBreakMode.rawValue)!
+        var lineSpacing: CGFloat = self.lineSpacing
         
         let styleSettings: [CTParagraphStyleSetting] = [
-            CTParagraphStyleSetting(spec: .alignment, valueSize: MemoryLayout<CTTextAlignment>.size, value: [textAlignment]),
-            CTParagraphStyleSetting(spec: .lineBreakMode, valueSize: MemoryLayout<CTLineBreakMode>.size, value: [lineBreakMode]),
-            CTParagraphStyleSetting(spec: .baseWritingDirection, valueSize: MemoryLayout<CTWritingDirection>.size, value: [direction]),
-            CTParagraphStyleSetting(spec: .minimumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: [lineSpacing]),
-            CTParagraphStyleSetting(spec: .maximumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: [lineSpacing]),
-            CTParagraphStyleSetting(spec: .firstLineHeadIndent, valueSize: MemoryLayout<CGFloat>.size, value: [firstLineIndent]),
-            CTParagraphStyleSetting(spec: .headIndent, valueSize: MemoryLayout<CGFloat>.size, value: [headIndent]),
-            CTParagraphStyleSetting(spec: .tailIndent, valueSize: MemoryLayout<CGFloat>.size, value: [tailIndent]),
-            CTParagraphStyleSetting(spec: .lineHeightMultiple, valueSize: MemoryLayout<CGFloat>.size, value: [lineHeightMultiple]),
-            CTParagraphStyleSetting(spec: .maximumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: [maximumLineHeight]),
-            CTParagraphStyleSetting(spec: .minimumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: [minimumLineHeight]),
-            CTParagraphStyleSetting(spec: .paragraphSpacing, valueSize: MemoryLayout<CGFloat>.size, value: [paragraphSpacing]),
-            CTParagraphStyleSetting(spec: .paragraphSpacingBefore, valueSize: MemoryLayout<CGFloat>.size, value: [paragraphSpacingBefore])
+            CTParagraphStyleSetting(spec: .alignment, valueSize: MemoryLayout<CTTextAlignment>.size, value: &textAlignment),
+            CTParagraphStyleSetting(spec: .lineBreakMode, valueSize: MemoryLayout<CTLineBreakMode>.size, value: &lineBreakMode),
+            CTParagraphStyleSetting(spec: .baseWritingDirection, valueSize: MemoryLayout<CTWritingDirection>.size, value: &direction),
+            CTParagraphStyleSetting(spec: .minimumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &lineSpacing),
+            CTParagraphStyleSetting(spec: .maximumLineSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &lineSpacing),
+            CTParagraphStyleSetting(spec: .firstLineHeadIndent, valueSize: MemoryLayout<CGFloat>.size, value: &firstLineIndent),
+            CTParagraphStyleSetting(spec: .headIndent, valueSize: MemoryLayout<CGFloat>.size, value: &headIndent),
+            CTParagraphStyleSetting(spec: .tailIndent, valueSize: MemoryLayout<CGFloat>.size, value: &tailIndent),
+            CTParagraphStyleSetting(spec: .lineHeightMultiple, valueSize: MemoryLayout<CGFloat>.size, value: &lineHeightMultiple),
+            CTParagraphStyleSetting(spec: .maximumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: &maximumLineHeight),
+            CTParagraphStyleSetting(spec: .minimumLineHeight, valueSize: MemoryLayout<CGFloat>.size, value: &minimumLineHeight),
+            CTParagraphStyleSetting(spec: .paragraphSpacing, valueSize: MemoryLayout<CGFloat>.size, value: &paragraphSpacing),
+            CTParagraphStyleSetting(spec: .paragraphSpacingBefore, valueSize: MemoryLayout<CGFloat>.size, value: &paragraphSpacingBefore)
         ]
         
-        let paragraphStyle = CTParagraphStyleCreate(styleSettings, MemoryLayout.size(ofValue: styleSettings) / MemoryLayout<CTParagraphStyleSetting>.size)
-        CFDictionaryAddValue(styleDictionary, [kCTParagraphStyleAttributeName], [paragraphStyle])
+        let paragraphStyle = CTParagraphStyleCreate(styleSettings, styleSettings.count)
+        CFDictionaryAddValue(styleDictionary, Unmanaged.passUnretained(kCTParagraphStyleAttributeName).toOpaque(), Unmanaged.passUnretained(paragraphStyle).toOpaque())
         CFAttributedStringSetAttributes(text, CFRange(location: position, length: length), styleDictionary, false)
     }
 
@@ -502,11 +522,11 @@ open class VGLabel: UIView {
     
     // MARK: Underline
     func applySingleUnderlineText(_ text: CFMutableAttributedString, position: Int, length: Int) {
-        CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTUnderlineStyleAttributeName, CTUnderlineStyle.single as CFTypeRef)
+        CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTUnderlineStyleAttributeName, CTUnderlineStyle.single.rawValue as CFTypeRef)
     }
     
     func applyDoubleUnderlineText(_ text: CFMutableAttributedString, position: Int, length: Int) {
-        CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTUnderlineStyleAttributeName, CTUnderlineStyle.double as CFTypeRef)
+        CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTUnderlineStyleAttributeName, CTUnderlineStyle.double.rawValue as CFTypeRef)
     }
     
     // MARK: Color
@@ -549,9 +569,9 @@ open class VGLabel: UIView {
     }
 }
 
-// MARK: Class method
+// MARK: Public method
 extension VGLabel {
-    
+
 }
 
 // MARK: extension HexString
@@ -567,12 +587,12 @@ extension VGLabel {
         
         let bString = String(hexColor[gEndIndex...])
         
-        var r: Float = 0.0
-        var g: Float = 0.0
-        var b: Float = 0.0
-        Scanner(string: rString).scanHexFloat(&r)
-        Scanner(string: gString).scanHexFloat(&g)
-        Scanner(string: bString).scanHexFloat(&b)
+        var r: Double = 0.0
+        var g: Double = 0.0
+        var b: Double = 0.0
+        Scanner(string: "0x" + rString).scanHexDouble(&r)
+        Scanner(string: "0x" + gString).scanHexDouble(&g)
+        Scanner(string: "0x" + bString).scanHexDouble(&b)
         let components = [CGFloat(r / 255.0), CGFloat(g / 255.0), CGFloat(b / 255.0), CGFloat(1.0)]
         return components
     }
