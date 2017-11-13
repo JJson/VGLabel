@@ -142,7 +142,6 @@ open class VGLabel: UIView {
     
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-        let currentContext = UIGraphicsGetCurrentContext()
         render()
     }
     
