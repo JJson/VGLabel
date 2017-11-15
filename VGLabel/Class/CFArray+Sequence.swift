@@ -20,7 +20,7 @@ extension CFArray: Sequence {
         var array: NSArray
         var idx = 0
         
-        init(_ array: CFArray){
+        init(_ array: CFArray) {
             self.array = array as NSArray
         }
         

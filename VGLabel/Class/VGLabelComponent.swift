@@ -37,12 +37,12 @@ public class VGLabelComponent: NSObject {
     
     override public var description : String {
         var desc = "text: \(text), position: \(position)"
-        if let tag = tagLabel  {
-            desc = desc + ", tag: \(tag)"
+        if let tag = tagLabel {
+            desc += ", tag: \(tag)"
         }
         
         if let att = attributes {
-            desc = desc + ", attributes: \(att)"
+            desc += ", attributes: \(att)"
         }
         
         return desc
@@ -134,25 +134,3 @@ public class VGLabelExtractedComponent: NSObject {
         return VGLabelExtractedComponent.labelExtractedComponent(components, plainText: styleData)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

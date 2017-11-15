@@ -11,7 +11,7 @@ import CoreText
 
 public enum VGTextAlignment: UInt8 {
     case left
-
+    
     case right
     
     case center
@@ -59,7 +59,7 @@ open class VGLabel: UIView {
         willSet {
             self.highlightedText = newValue?.replacingOccurrences(of: "<br>", with: "\n")
             if let highlightedText = self.highlightedText {
-              let extractedComponent = VGLabelExtractedComponent.extractTextStyle(highlightedText, paragraphReplacement: self.paragraphReplacement)
+                let extractedComponent = VGLabelExtractedComponent.extractTextStyle(highlightedText, paragraphReplacement: self.paragraphReplacement)
                 highlightedTextComponents = extractedComponent.textComponents
             }
         }
@@ -85,7 +85,7 @@ open class VGLabel: UIView {
             return _optimumSize
         }
         set {
-           _optimumSize = newValue
+            _optimumSize = newValue
         }
     }
     
@@ -284,7 +284,7 @@ open class VGLabel: UIView {
                         CTFrameGetLineOrigins(frame, CFRange(location: index, length: 1), &origin)
                         
                         if (linkableComponent.position < lineRange.location &&
-                        linkableComponent.position + linkableComponent.text.characters.count > lineRange.location) ||
+                            linkableComponent.position + linkableComponent.text.characters.count > lineRange.location) ||
                             (linkableComponent.position >= lineRange.location && linkableComponent.position < lineRange.location + lineRange.length) {
                             var secondaryOffset: CGFloat = 0.0
                             let line: CTLine = unsafeBitCast(CFArrayGetValueAtIndex(frameLines, index), to: CTLine.self)
@@ -336,7 +336,7 @@ open class VGLabel: UIView {
         var textAlignment: CTTextAlignment = CTTextAlignment(rawValue: self.textAlignment.rawValue)!
         var lineBreakMode: CTLineBreakMode = CTLineBreakMode(rawValue: self.lineBreakMode.rawValue)!
         var lineSpacing: CGFloat = self.lineSpacing
-
+        
         if let attr = attributes {
             let keys = Array(attr.keys)
             for key in keys {
@@ -368,8 +368,8 @@ open class VGLabel: UIView {
                         lineBreakMode = .byTruncatingMiddle
                     }
                 }
+            }
         }
-    }
         let styleSettings: [CTParagraphStyleSetting] = [
             CTParagraphStyleSetting(spec: .alignment, valueSize: MemoryLayout<CTTextAlignment>.size, value: &textAlignment),
             CTParagraphStyleSetting(spec: .lineBreakMode, valueSize: MemoryLayout<CTLineBreakMode>.size, value: &lineBreakMode),
@@ -429,11 +429,11 @@ open class VGLabel: UIView {
         CFDictionaryAddValue(styleDictionary, Unmanaged.passUnretained(kCTParagraphStyleAttributeName).toOpaque(), Unmanaged.passUnretained(paragraphStyle).toOpaque())
         CFAttributedStringSetAttributes(text, CFRange(location: position, length: length), styleDictionary, false)
     }
-
+    
     // MARK: Font
     func applyItalicStyle(_ text: CFMutableAttributedString, position: Int, length: Int) {
         let actualTypeRef: CFTypeRef = CFAttributedStringGetAttribute(text, position, kCTFontAttributeName, nil)
-        var italicFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont , 0.0, nil, .traitItalic, .traitItalic)
+        var italicFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont, 0.0, nil, .traitItalic, .traitItalic)
         if let ctFont = italicFont {
             // fallback to system italic font
             let uiFont = UIFont.italicSystemFont(ofSize: CTFontGetSize(ctFont))
@@ -445,7 +445,7 @@ open class VGLabel: UIView {
     
     func applyBoldStyle(_ text: CFMutableAttributedString, position: Int, length: Int) {
         let actualTypeRef: CFTypeRef = CFAttributedStringGetAttribute(text, position, kCTFontAttributeName, nil)
-        var boldFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont , 0.0, nil, .boldTrait, .boldTrait)
+        var boldFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont, 0.0, nil, .boldTrait, .boldTrait)
         if let ctFont = boldFont {
             // fallback to system bold font
             let uiFont = UIFont.italicSystemFont(ofSize: CTFontGetSize(ctFont))
@@ -457,7 +457,7 @@ open class VGLabel: UIView {
     
     func applyBoldItalicStyle(_ text: CFMutableAttributedString, position: Int, length: Int) {
         let actualTypeRef = CFAttributedStringGetAttribute(text, position, kCTFontAttributeName, nil)
-        var boldItalicFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont , 0.0, nil, CTFontSymbolicTraits(rawValue: CTFontSymbolicTraits.RawValue(UInt8(CTFontSymbolicTraits.boldTrait.rawValue) | UInt8(CTFontSymbolicTraits.italicTrait.rawValue))), CTFontSymbolicTraits(rawValue: CTFontSymbolicTraits.RawValue(UInt8(CTFontSymbolicTraits.boldTrait.rawValue) | UInt8(CTFontSymbolicTraits.italicTrait.rawValue))))
+        var boldItalicFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont, 0.0, nil, CTFontSymbolicTraits(rawValue: CTFontSymbolicTraits.RawValue(UInt8(CTFontSymbolicTraits.boldTrait.rawValue) | UInt8(CTFontSymbolicTraits.italicTrait.rawValue))), CTFontSymbolicTraits(rawValue: CTFontSymbolicTraits.RawValue(UInt8(CTFontSymbolicTraits.boldTrait.rawValue) | UInt8(CTFontSymbolicTraits.italicTrait.rawValue))))
         
         if boldItalicFont == nil {
             // fallback to system bold font
@@ -536,14 +536,14 @@ open class VGLabel: UIView {
             hexString = value.replacingOccurrences(of: "#", with: "")
             let components = color(forHex: hexString)
             let cgColor: CGColor = CGColor(colorSpace: rgbColorSpace, components: components)!
-            CFAttributedStringSetAttribute(text, CFRange(location: position, length: length),kCTForegroundColorAttributeName, cgColor)
+            CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTForegroundColorAttributeName, cgColor)
         } else {
             let color = value.appending("Color")
             let colorSEL: Selector = NSSelectorFromString(color)
             if UIColor.responds(to: colorSEL) {
                 let uiColor = UIColor.perform(colorSEL).takeRetainedValue() as? UIColor
                 let cgColor = uiColor?.cgColor
-                CFAttributedStringSetAttribute(text, CFRange(location: position, length: length),kCTForegroundColorAttributeName, cgColor)
+                CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTForegroundColorAttributeName, cgColor)
             }
         }
     }
@@ -555,14 +555,14 @@ open class VGLabel: UIView {
             value = value.replacingOccurrences(of: "#", with: "0x")
             let colorComponents = color(forHex: value)
             let cgColor = CGColor(colorSpace: rgbColorSpace, components: colorComponents)
-            CFAttributedStringSetAttribute(text, CFRangeMake(position, length),kCTUnderlineColorAttributeName, cgColor)
+            CFAttributedStringSetAttribute(text, CFRangeMake(position, length), kCTUnderlineColorAttributeName, cgColor)
         } else {
             let color = value.appending("Color")
             let colorSEL: Selector = NSSelectorFromString(color)
             if UIColor.responds(to: colorSEL) {
                 let uiColor = UIColor.perform(colorSEL).takeRetainedValue() as? UIColor
                 let cgColor = uiColor?.cgColor
-                CFAttributedStringSetAttribute(text, CFRange(location: position, length: length),kCTForegroundColorAttributeName, cgColor)
+                CFAttributedStringSetAttribute(text, CFRange(location: position, length: length), kCTForegroundColorAttributeName, cgColor)
             }
         }
     }
@@ -570,7 +570,7 @@ open class VGLabel: UIView {
 
 // MARK: Public method
 extension VGLabel {
-
+    
 }
 
 // MARK: extension HexString
@@ -616,24 +616,3 @@ extension VGLabel {
         delegate?.vgLabel(self, didSelectLink: sender.url)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

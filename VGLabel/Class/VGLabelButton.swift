@@ -13,4 +13,3 @@ class VGLabelButton: UIButton {
     internal var componentIndex: Int = 0
     internal var url: URL?
 }
-
