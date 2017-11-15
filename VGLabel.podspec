@@ -6,8 +6,8 @@
 Pod::Spec.new do |s|
   s.name         = "VGLabel"
   s.version      = "0.0.1"
-  s.summary      = "Simple rich text display for iOS using html-like markups"
-  s.description  = "Simple rich text display for iOS using html-like markups by Vein."
+  s.summary      = "Simple parsing HTML tag rich text reality."
+  s.description  = "Simple parsing HTML tag rich text reality by Vein."
   
   s.license      = { :type => 'MIT License', :file => 'LICENSE' }
   s.homepage     = "https://github.com/VeinGuo/VGLabel"
@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/VeinGuo/VGLabel.git", :tag => s.version }
   s.source_files = 'VGLabel/Classes/*.*', 'VGLabel/Classes/**/*.*'
-  s.resources    = 'VGLabel/*.xcassets'
   s.requires_arc = true
   s.frameworks   = 'UIKit', 'CoreText', 'Foundation'
 
