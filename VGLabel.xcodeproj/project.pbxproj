@@ -7,157 +7,130 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		333A9E341FB2D78F006A96A1 /* VGStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */; };
-		338EA7721FB18EF40029AD8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7711FB18EF40029AD8F /* AppDelegate.swift */; };
-		338EA7741FB18EF40029AD8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7731FB18EF40029AD8F /* ViewController.swift */; };
-		338EA7771FB18EF40029AD8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338EA7751FB18EF40029AD8F /* Main.storyboard */; };
-		338EA7791FB18EF40029AD8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338EA7781FB18EF40029AD8F /* Assets.xcassets */; };
-		338EA77C1FB18EF40029AD8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338EA77A1FB18EF40029AD8F /* LaunchScreen.storyboard */; };
-		338EA7871FB18EF40029AD8F /* VGLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7861FB18EF40029AD8F /* VGLabelTests.swift */; };
-		338EA7921FB18EF50029AD8F /* VGLabelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7911FB18EF50029AD8F /* VGLabelUITests.swift */; };
-		338EA7A11FB18F7C0029AD8F /* VGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7A01FB18F7C0029AD8F /* VGLabel.swift */; };
-		338EA7A31FB191C10029AD8F /* VGLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7A21FB191C10029AD8F /* VGLabelButton.swift */; };
-		338EA7A51FB193140029AD8F /* VGLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EA7A41FB193140029AD8F /* VGLabelComponent.swift */; };
-		33FD6BF91FB424A80022AE02 /* CFArray+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */; };
+		33BDC03E1FBBE65400DE9316 /* VGLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BDC0341FBBE65300DE9316 /* VGLabel.framework */; };
+		33BDC0431FBBE65400DE9316 /* VGLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BDC0421FBBE65400DE9316 /* VGLabelTests.swift */; };
+		33BDC0451FBBE65400DE9316 /* VGLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 33BDC0371FBBE65300DE9316 /* VGLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33E9DCE31FBBEA0A0093959A /* CFArray+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9DCDE1FBBEA0A0093959A /* CFArray+Sequence.swift */; };
+		33E9DCE41FBBEA0A0093959A /* VGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9DCDF1FBBEA0A0093959A /* VGLabel.swift */; };
+		33E9DCE51FBBEA0A0093959A /* VGLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9DCE01FBBEA0A0093959A /* VGLabelButton.swift */; };
+		33E9DCE61FBBEA0A0093959A /* VGLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9DCE11FBBEA0A0093959A /* VGLabelComponent.swift */; };
+		33E9DCE71FBBEA0A0093959A /* VGStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9DCE21FBBEA0A0093959A /* VGStringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		338EA7831FB18EF40029AD8F /* PBXContainerItemProxy */ = {
+		33BDC03F1FBBE65400DE9316 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 338EA7661FB18EF40029AD8F /* Project object */;
+			containerPortal = 33BDC02B1FBBE65300DE9316 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 338EA76D1FB18EF40029AD8F;
-			remoteInfo = VGLabel;
-		};
-		338EA78E1FB18EF40029AD8F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 338EA7661FB18EF40029AD8F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 338EA76D1FB18EF40029AD8F;
+			remoteGlobalIDString = 33BDC0331FBBE65300DE9316;
 			remoteInfo = VGLabel;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGStringExtensions.swift; sourceTree = "<group>"; };
-		338EA76E1FB18EF40029AD8F /* VGLabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGLabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		338EA7711FB18EF40029AD8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		338EA7731FB18EF40029AD8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		338EA7761FB18EF40029AD8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		338EA7781FB18EF40029AD8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		338EA77B1FB18EF40029AD8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		338EA77D1FB18EF40029AD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		338EA7821FB18EF40029AD8F /* VGLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VGLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		338EA7861FB18EF40029AD8F /* VGLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelTests.swift; sourceTree = "<group>"; };
-		338EA7881FB18EF40029AD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		338EA78D1FB18EF40029AD8F /* VGLabelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VGLabelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		338EA7911FB18EF50029AD8F /* VGLabelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelUITests.swift; sourceTree = "<group>"; };
-		338EA7931FB18EF50029AD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		338EA7A01FB18F7C0029AD8F /* VGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabel.swift; sourceTree = "<group>"; };
-		338EA7A21FB191C10029AD8F /* VGLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelButton.swift; sourceTree = "<group>"; };
-		338EA7A41FB193140029AD8F /* VGLabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelComponent.swift; sourceTree = "<group>"; };
-		33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CFArray+Sequence.swift"; sourceTree = "<group>"; };
+		33BDC0341FBBE65300DE9316 /* VGLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VGLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BDC0371FBBE65300DE9316 /* VGLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VGLabel.h; sourceTree = "<group>"; };
+		33BDC0381FBBE65300DE9316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33BDC03D1FBBE65400DE9316 /* VGLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VGLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BDC0421FBBE65400DE9316 /* VGLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLabelTests.swift; sourceTree = "<group>"; };
+		33BDC0441FBBE65400DE9316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33E9DCDE1FBBEA0A0093959A /* CFArray+Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CFArray+Sequence.swift"; sourceTree = "<group>"; };
+		33E9DCDF1FBBEA0A0093959A /* VGLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGLabel.swift; sourceTree = "<group>"; };
+		33E9DCE01FBBEA0A0093959A /* VGLabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGLabelButton.swift; sourceTree = "<group>"; };
+		33E9DCE11FBBEA0A0093959A /* VGLabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGLabelComponent.swift; sourceTree = "<group>"; };
+		33E9DCE21FBBEA0A0093959A /* VGStringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGStringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		338EA76B1FB18EF40029AD8F /* Frameworks */ = {
+		33BDC0301FBBE65300DE9316 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		338EA77F1FB18EF40029AD8F /* Frameworks */ = {
+		33BDC03A1FBBE65400DE9316 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		338EA78A1FB18EF40029AD8F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				33BDC03E1FBBE65400DE9316 /* VGLabel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		338EA7651FB18EF40029AD8F = {
+		33BDC02A1FBBE65300DE9316 = {
 			isa = PBXGroup;
 			children = (
-				338EA7701FB18EF40029AD8F /* VGLabel */,
-				338EA7851FB18EF40029AD8F /* VGLabelTests */,
-				338EA7901FB18EF50029AD8F /* VGLabelUITests */,
-				338EA76F1FB18EF40029AD8F /* Products */,
+				33BDC0361FBBE65300DE9316 /* VGLabel */,
+				33BDC0411FBBE65400DE9316 /* VGLabelTests */,
+				33BDC0351FBBE65300DE9316 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		338EA76F1FB18EF40029AD8F /* Products */ = {
+		33BDC0351FBBE65300DE9316 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				338EA76E1FB18EF40029AD8F /* VGLabel.app */,
-				338EA7821FB18EF40029AD8F /* VGLabelTests.xctest */,
-				338EA78D1FB18EF40029AD8F /* VGLabelUITests.xctest */,
+				33BDC0341FBBE65300DE9316 /* VGLabel.framework */,
+				33BDC03D1FBBE65400DE9316 /* VGLabelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		338EA7701FB18EF40029AD8F /* VGLabel */ = {
+		33BDC0361FBBE65300DE9316 /* VGLabel */ = {
 			isa = PBXGroup;
 			children = (
-				338EA79F1FB18F670029AD8F /* Classes */,
-				338EA7711FB18EF40029AD8F /* AppDelegate.swift */,
-				338EA7731FB18EF40029AD8F /* ViewController.swift */,
-				338EA7751FB18EF40029AD8F /* Main.storyboard */,
-				338EA7781FB18EF40029AD8F /* Assets.xcassets */,
-				338EA77A1FB18EF40029AD8F /* LaunchScreen.storyboard */,
-				338EA77D1FB18EF40029AD8F /* Info.plist */,
+				33E9DCDD1FBBEA0A0093959A /* Classes */,
+				33BDC0371FBBE65300DE9316 /* VGLabel.h */,
+				33BDC0381FBBE65300DE9316 /* Info.plist */,
 			);
 			path = VGLabel;
 			sourceTree = "<group>";
 		};
-		338EA7851FB18EF40029AD8F /* VGLabelTests */ = {
+		33BDC0411FBBE65400DE9316 /* VGLabelTests */ = {
 			isa = PBXGroup;
 			children = (
-				338EA7861FB18EF40029AD8F /* VGLabelTests.swift */,
-				338EA7881FB18EF40029AD8F /* Info.plist */,
+				33BDC0421FBBE65400DE9316 /* VGLabelTests.swift */,
+				33BDC0441FBBE65400DE9316 /* Info.plist */,
 			);
 			path = VGLabelTests;
 			sourceTree = "<group>";
 		};
-		338EA7901FB18EF50029AD8F /* VGLabelUITests */ = {
+		33E9DCDD1FBBEA0A0093959A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				338EA7911FB18EF50029AD8F /* VGLabelUITests.swift */,
-				338EA7931FB18EF50029AD8F /* Info.plist */,
-			);
-			path = VGLabelUITests;
-			sourceTree = "<group>";
-		};
-		338EA79F1FB18F670029AD8F /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				338EA7A01FB18F7C0029AD8F /* VGLabel.swift */,
-				338EA7A21FB191C10029AD8F /* VGLabelButton.swift */,
-				338EA7A41FB193140029AD8F /* VGLabelComponent.swift */,
-				333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */,
-				33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */,
+				33E9DCDE1FBBEA0A0093959A /* CFArray+Sequence.swift */,
+				33E9DCDF1FBBEA0A0093959A /* VGLabel.swift */,
+				33E9DCE01FBBEA0A0093959A /* VGLabelButton.swift */,
+				33E9DCE11FBBEA0A0093959A /* VGLabelComponent.swift */,
+				33E9DCE21FBBEA0A0093959A /* VGStringExtensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		33BDC0311FBBE65300DE9316 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33BDC0451FBBE65400DE9316 /* VGLabel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		338EA76D1FB18EF40029AD8F /* VGLabel */ = {
+		33BDC0331FBBE65300DE9316 /* VGLabel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 338EA7961FB18EF50029AD8F /* Build configuration list for PBXNativeTarget "VGLabel" */;
+			buildConfigurationList = 33BDC0481FBBE65400DE9316 /* Build configuration list for PBXNativeTarget "VGLabel" */;
 			buildPhases = (
-				338EA76A1FB18EF40029AD8F /* Sources */,
-				338EA76B1FB18EF40029AD8F /* Frameworks */,
-				338EA76C1FB18EF40029AD8F /* Resources */,
+				33BDC02F1FBBE65300DE9316 /* Sources */,
+				33BDC0301FBBE65300DE9316 /* Frameworks */,
+				33BDC0311FBBE65300DE9316 /* Headers */,
+				33BDC0321FBBE65300DE9316 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -165,110 +138,74 @@
 			);
 			name = VGLabel;
 			productName = VGLabel;
-			productReference = 338EA76E1FB18EF40029AD8F /* VGLabel.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 33BDC0341FBBE65300DE9316 /* VGLabel.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		338EA7811FB18EF40029AD8F /* VGLabelTests */ = {
+		33BDC03C1FBBE65400DE9316 /* VGLabelTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 338EA7991FB18EF50029AD8F /* Build configuration list for PBXNativeTarget "VGLabelTests" */;
+			buildConfigurationList = 33BDC04B1FBBE65400DE9316 /* Build configuration list for PBXNativeTarget "VGLabelTests" */;
 			buildPhases = (
-				338EA77E1FB18EF40029AD8F /* Sources */,
-				338EA77F1FB18EF40029AD8F /* Frameworks */,
-				338EA7801FB18EF40029AD8F /* Resources */,
+				33BDC0391FBBE65400DE9316 /* Sources */,
+				33BDC03A1FBBE65400DE9316 /* Frameworks */,
+				33BDC03B1FBBE65400DE9316 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				338EA7841FB18EF40029AD8F /* PBXTargetDependency */,
+				33BDC0401FBBE65400DE9316 /* PBXTargetDependency */,
 			);
 			name = VGLabelTests;
 			productName = VGLabelTests;
-			productReference = 338EA7821FB18EF40029AD8F /* VGLabelTests.xctest */;
+			productReference = 33BDC03D1FBBE65400DE9316 /* VGLabelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		338EA78C1FB18EF40029AD8F /* VGLabelUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 338EA79C1FB18EF50029AD8F /* Build configuration list for PBXNativeTarget "VGLabelUITests" */;
-			buildPhases = (
-				338EA7891FB18EF40029AD8F /* Sources */,
-				338EA78A1FB18EF40029AD8F /* Frameworks */,
-				338EA78B1FB18EF40029AD8F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				338EA78F1FB18EF40029AD8F /* PBXTargetDependency */,
-			);
-			name = VGLabelUITests;
-			productName = VGLabelUITests;
-			productReference = 338EA78D1FB18EF40029AD8F /* VGLabelUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		338EA7661FB18EF40029AD8F /* Project object */ = {
+		33BDC02B1FBBE65300DE9316 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Vein;
 				TargetAttributes = {
-					338EA76D1FB18EF40029AD8F = {
-						CreatedOnToolsVersion = 9.0.1;
+					33BDC0331FBBE65300DE9316 = {
+						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					338EA7811FB18EF40029AD8F = {
-						CreatedOnToolsVersion = 9.0.1;
+					33BDC03C1FBBE65400DE9316 = {
+						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 338EA76D1FB18EF40029AD8F;
-					};
-					338EA78C1FB18EF40029AD8F = {
-						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 338EA76D1FB18EF40029AD8F;
 					};
 				};
 			};
-			buildConfigurationList = 338EA7691FB18EF40029AD8F /* Build configuration list for PBXProject "VGLabel" */;
+			buildConfigurationList = 33BDC02E1FBBE65300DE9316 /* Build configuration list for PBXProject "VGLabel" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 338EA7651FB18EF40029AD8F;
-			productRefGroup = 338EA76F1FB18EF40029AD8F /* Products */;
+			mainGroup = 33BDC02A1FBBE65300DE9316;
+			productRefGroup = 33BDC0351FBBE65300DE9316 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				338EA76D1FB18EF40029AD8F /* VGLabel */,
-				338EA7811FB18EF40029AD8F /* VGLabelTests */,
-				338EA78C1FB18EF40029AD8F /* VGLabelUITests */,
+				33BDC0331FBBE65300DE9316 /* VGLabel */,
+				33BDC03C1FBBE65400DE9316 /* VGLabelTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		338EA76C1FB18EF40029AD8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				338EA77C1FB18EF40029AD8F /* LaunchScreen.storyboard in Resources */,
-				338EA7791FB18EF40029AD8F /* Assets.xcassets in Resources */,
-				338EA7771FB18EF40029AD8F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		338EA7801FB18EF40029AD8F /* Resources */ = {
+		33BDC0321FBBE65300DE9316 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		338EA78B1FB18EF40029AD8F /* Resources */ = {
+		33BDC03B1FBBE65400DE9316 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,72 +215,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		338EA76A1FB18EF40029AD8F /* Sources */ = {
+		33BDC02F1FBBE65300DE9316 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338EA7741FB18EF40029AD8F /* ViewController.swift in Sources */,
-				333A9E341FB2D78F006A96A1 /* VGStringExtensions.swift in Sources */,
-				338EA7A11FB18F7C0029AD8F /* VGLabel.swift in Sources */,
-				338EA7A51FB193140029AD8F /* VGLabelComponent.swift in Sources */,
-				338EA7721FB18EF40029AD8F /* AppDelegate.swift in Sources */,
-				338EA7A31FB191C10029AD8F /* VGLabelButton.swift in Sources */,
-				33FD6BF91FB424A80022AE02 /* CFArray+Sequence.swift in Sources */,
+				33E9DCE61FBBEA0A0093959A /* VGLabelComponent.swift in Sources */,
+				33E9DCE31FBBEA0A0093959A /* CFArray+Sequence.swift in Sources */,
+				33E9DCE71FBBEA0A0093959A /* VGStringExtensions.swift in Sources */,
+				33E9DCE41FBBEA0A0093959A /* VGLabel.swift in Sources */,
+				33E9DCE51FBBEA0A0093959A /* VGLabelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		338EA77E1FB18EF40029AD8F /* Sources */ = {
+		33BDC0391FBBE65400DE9316 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338EA7871FB18EF40029AD8F /* VGLabelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		338EA7891FB18EF40029AD8F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				338EA7921FB18EF50029AD8F /* VGLabelUITests.swift in Sources */,
+				33BDC0431FBBE65400DE9316 /* VGLabelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		338EA7841FB18EF40029AD8F /* PBXTargetDependency */ = {
+		33BDC0401FBBE65400DE9316 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 338EA76D1FB18EF40029AD8F /* VGLabel */;
-			targetProxy = 338EA7831FB18EF40029AD8F /* PBXContainerItemProxy */;
-		};
-		338EA78F1FB18EF40029AD8F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 338EA76D1FB18EF40029AD8F /* VGLabel */;
-			targetProxy = 338EA78E1FB18EF40029AD8F /* PBXContainerItemProxy */;
+			target = 33BDC0331FBBE65300DE9316 /* VGLabel */;
+			targetProxy = 33BDC03F1FBBE65400DE9316 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		338EA7751FB18EF40029AD8F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				338EA7761FB18EF40029AD8F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		338EA77A1FB18EF40029AD8F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				338EA77B1FB18EF40029AD8F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		338EA7941FB18EF50029AD8F /* Debug */ = {
+		33BDC0461FBBE65400DE9316 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -374,6 +277,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -391,16 +295,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		338EA7951FB18EF50029AD8F /* Release */ = {
+		33BDC0471FBBE65400DE9316 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -431,6 +337,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -442,47 +349,62 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		338EA7971FB18EF50029AD8F /* Debug */ = {
+		33BDC0491FBBE65400DE9316 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VGLabel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vein.VGLabel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		338EA7981FB18EF50029AD8F /* Release */ = {
+		33BDC04A1FBBE65400DE9316 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = VGLabel/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vein.VGLabel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		338EA79A1FB18EF50029AD8F /* Debug */ = {
+		33BDC04C1FBBE65400DE9316 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VGLabelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -490,15 +412,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VGLabel.app/VGLabel";
 			};
 			name = Debug;
 		};
-		338EA79B1FB18EF50029AD8F /* Release */ = {
+		33BDC04D1FBBE65400DE9316 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VGLabelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -506,80 +426,40 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VGLabel.app/VGLabel";
-			};
-			name = Release;
-		};
-		338EA79D1FB18EF50029AD8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = VGLabelUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vein.VGLabelUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = VGLabel;
-			};
-			name = Debug;
-		};
-		338EA79E1FB18EF50029AD8F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = VGLabelUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vein.VGLabelUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = VGLabel;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		338EA7691FB18EF40029AD8F /* Build configuration list for PBXProject "VGLabel" */ = {
+		33BDC02E1FBBE65300DE9316 /* Build configuration list for PBXProject "VGLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				338EA7941FB18EF50029AD8F /* Debug */,
-				338EA7951FB18EF50029AD8F /* Release */,
+				33BDC0461FBBE65400DE9316 /* Debug */,
+				33BDC0471FBBE65400DE9316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		338EA7961FB18EF50029AD8F /* Build configuration list for PBXNativeTarget "VGLabel" */ = {
+		33BDC0481FBBE65400DE9316 /* Build configuration list for PBXNativeTarget "VGLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				338EA7971FB18EF50029AD8F /* Debug */,
-				338EA7981FB18EF50029AD8F /* Release */,
+				33BDC0491FBBE65400DE9316 /* Debug */,
+				33BDC04A1FBBE65400DE9316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		338EA7991FB18EF50029AD8F /* Build configuration list for PBXNativeTarget "VGLabelTests" */ = {
+		33BDC04B1FBBE65400DE9316 /* Build configuration list for PBXNativeTarget "VGLabelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				338EA79A1FB18EF50029AD8F /* Debug */,
-				338EA79B1FB18EF50029AD8F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		338EA79C1FB18EF50029AD8F /* Build configuration list for PBXNativeTarget "VGLabelUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				338EA79D1FB18EF50029AD8F /* Debug */,
-				338EA79E1FB18EF50029AD8F /* Release */,
+				33BDC04C1FBBE65400DE9316 /* Debug */,
+				33BDC04D1FBBE65400DE9316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 338EA7661FB18EF40029AD8F /* Project object */;
+	rootObject = 33BDC02B1FBBE65300DE9316 /* Project object */;
 }

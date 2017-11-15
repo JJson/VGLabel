@@ -1,0 +1,6 @@
+framework module VGLabel {
+  umbrella header "VGLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}

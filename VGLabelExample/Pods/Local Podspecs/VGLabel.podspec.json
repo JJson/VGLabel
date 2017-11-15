@@ -1,0 +1,35 @@
+{
+  "name": "VGLabel",
+  "version": "0.0.1",
+  "summary": "Simple rich text display for iOS using html-like markups",
+  "description": "Simple rich text display for iOS using html-like markups by Vein.",
+  "license": {
+    "type": "MIT License",
+    "file": "LICENSE"
+  },
+  "homepage": "https://github.com/VeinGuo/VGLabel",
+  "authors": {
+    "VeinGuo": "https://github.com/VeinGuo"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "4.0"
+  },
+  "source": {
+    "git": "https://github.com/VeinGuo/VGLabel.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "VGLabel/Classes/*.*",
+    "VGLabel/Classes/**/*.*"
+  ],
+  "resources": "VGLabel/*.xcassets",
+  "requires_arc": true,
+  "frameworks": [
+    "UIKit",
+    "CoreText",
+    "Foundation"
+  ]
+}

@@ -1,12 +1,13 @@
 //
 //  ViewController.swift
-//  VGLabel
+//  VGLabelExample
 //
-//  Created by Vein on 2017/11/7.
+//  Created by Vein on 2017/11/15.
 //  Copyright © 2017年 Vein. All rights reserved.
 //
 
 import UIKit
+import VGLabel
 
 class ViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
         label.delegate = self
         label.paragraphReplacement = ""
         print(label.optimumSize ?? "xxxx")
-//        label.frame = CGRect(origin: CGPoint(x: 0, y: 100), size: label.optimumSize!)
+        //        label.frame = CGRect(origin: CGPoint(x: 0, y: 100), size: label.optimumSize!)
         view.addSubview(label)
     }
 }

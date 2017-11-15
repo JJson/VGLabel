@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		279BAE59AECE52926D61DA69B10B48AF /* VGLabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1569555E57013850BB6C409AD5DCA82 /* VGLabelComponent.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		44C69249F20DE5025124C9F6085E5AD7 /* VGStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078F69A5318C90C47E1DD918A5CA3D6 /* VGStringExtensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		56E469BF848054ECB4133BB5122CFFB6 /* CFArray+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C61E0CD85AFD405D1BB74ED3487425 /* CFArray+Sequence.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6763FC23E3F4073F93B021EEB1CD38A4 /* VGLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 896253AB58BDAB843D517158B6FC3500 /* VGLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6808DC538201F42AF5AEB90D4EC87F66 /* Pods-VGLabelExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6BA084B8F7B9BB99C28129C1AD96E9E /* Pods-VGLabelExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84CA535B7353DD39BF897B84857A6FF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AF639F48630A369AAB591B5B339CC8 /* Foundation.framework */; };
+		95BCF05E7835F2C2CD929764C5D838EA /* Pods-VGLabelExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AF34AF2FC49B2A1266EE00DFBB612A /* Pods-VGLabelExample-dummy.m */; };
+		ABB819F9736125A683C79399B9886989 /* VGLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364C839CCD4D93AADAA2921B4D211046 /* VGLabelButton.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BE86719E09EAF619A2756C32F8986869 /* VGLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD2ADDE208D107709165F9A08B07E /* VGLabel-dummy.m */; };
+		D6AEEB592FBB3917C0BA14D292856B12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7AF639F48630A369AAB591B5B339CC8 /* Foundation.framework */; };
+		DF56DD68673508F643A7FD9791BDD116 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BE1AF8CEE8818CBCFD0010AE8BEE51 /* UIKit.framework */; };
+		F6CA7BD9A60B4E9DC7690512E370CA96 /* VGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC2BF6D9E8B394ACD954E654CAEEB0 /* VGLabel.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FB65AC6B75703304CB712008C4B7DE70 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55C580E1FC5B6E9F442FE42A9553FEA /* CoreText.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9E4C2802B2B77DE68D81F165F873D143 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2125E20C53C5C6BD77EAC69016E8B97;
+			remoteInfo = VGLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		073D2EBEE28DE7375C3AA5F4062453C2 /* Pods-VGLabelExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VGLabelExample.release.xcconfig"; sourceTree = "<group>"; };
+		0E77CA3E66A914C0ED8AB5EB5C87DAA3 /* VGLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VGLabel.framework; path = VGLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BE1AF8CEE8818CBCFD0010AE8BEE51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		364C839CCD4D93AADAA2921B4D211046 /* VGLabelButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VGLabelButton.swift; path = VGLabel/Classes/VGLabelButton.swift; sourceTree = "<group>"; };
+		385724FCC21E27791360EFFD572E73AF /* Pods-VGLabelExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VGLabelExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6066C89178CA02DAE3DB1BCAF5066C04 /* Pods-VGLabelExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-VGLabelExample.modulemap"; sourceTree = "<group>"; };
+		62AF34AF2FC49B2A1266EE00DFBB612A /* Pods-VGLabelExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VGLabelExample-dummy.m"; sourceTree = "<group>"; };
+		6A5AD2ADDE208D107709165F9A08B07E /* VGLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VGLabel-dummy.m"; sourceTree = "<group>"; };
+		6C0A2B80982132B3D2923183BF8B3561 /* VGLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = VGLabel.modulemap; sourceTree = "<group>"; };
+		7065F850E6D23CC9FFAC111EDAF247BD /* VGLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VGLabel.xcconfig; sourceTree = "<group>"; };
+		712D81D093D2CA9ED357E2DE38234CFD /* Pods-VGLabelExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VGLabelExample.debug.xcconfig"; sourceTree = "<group>"; };
+		72EC2BF6D9E8B394ACD954E654CAEEB0 /* VGLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VGLabel.swift; path = VGLabel/Classes/VGLabel.swift; sourceTree = "<group>"; };
+		80C61E0CD85AFD405D1BB74ED3487425 /* CFArray+Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CFArray+Sequence.swift"; path = "VGLabel/Classes/CFArray+Sequence.swift"; sourceTree = "<group>"; };
+		85E941F7849E542B6D9CADA009AC1A7A /* Pods-VGLabelExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VGLabelExample-frameworks.sh"; sourceTree = "<group>"; };
+		896253AB58BDAB843D517158B6FC3500 /* VGLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VGLabel-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9766EDB9D9B0C7B5FC09DE43B3B5DEAF /* VGLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VGLabel-prefix.pch"; sourceTree = "<group>"; };
+		9938C8B60319297795E435250EED9DA9 /* Pods-VGLabelExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VGLabelExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		A7AF639F48630A369AAB591B5B339CC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B078F69A5318C90C47E1DD918A5CA3D6 /* VGStringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VGStringExtensions.swift; path = VGLabel/Classes/VGStringExtensions.swift; sourceTree = "<group>"; };
+		B6BA084B8F7B9BB99C28129C1AD96E9E /* Pods-VGLabelExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VGLabelExample-umbrella.h"; sourceTree = "<group>"; };
+		C18C14CC1D964C6B03B53CD177094EE7 /* Pods_VGLabelExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VGLabelExample.framework; path = "Pods-VGLabelExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4B2F3A1B3CA6CBE911516200E1DE17D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55C580E1FC5B6E9F442FE42A9553FEA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		D1569555E57013850BB6C409AD5DCA82 /* VGLabelComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VGLabelComponent.swift; path = VGLabel/Classes/VGLabelComponent.swift; sourceTree = "<group>"; };
+		D67B7EDE910157280D070D64B7B09134 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4606291B2BA23007F9B2B3235145AD7 /* Pods-VGLabelExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VGLabelExample-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FC4B55C7EB042756D74E9E139C9BED3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB65AC6B75703304CB712008C4B7DE70 /* CoreText.framework in Frameworks */,
+				84CA535B7353DD39BF897B84857A6FF9 /* Foundation.framework in Frameworks */,
+				DF56DD68673508F643A7FD9791BDD116 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31BBE75055DDCC46C685AE5DB6EF73C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6AEEB592FBB3917C0BA14D292856B12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF1CA95E532A8F990E19506982FA04EE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		486D705D7D517463063ACE56867CFDAF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90DCC6CD6CBA9FFE8BEDCC8CA0C837C3 /* Pods-VGLabelExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E4E6DA114CF099404B3182BC5B3FD31F /* Development Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				F088A4237FF575009007CB3F93218B78 /* Products */,
+				486D705D7D517463063ACE56867CFDAF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		90DCC6CD6CBA9FFE8BEDCC8CA0C837C3 /* Pods-VGLabelExample */ = {
+			isa = PBXGroup;
+			children = (
+				C4B2F3A1B3CA6CBE911516200E1DE17D /* Info.plist */,
+				6066C89178CA02DAE3DB1BCAF5066C04 /* Pods-VGLabelExample.modulemap */,
+				385724FCC21E27791360EFFD572E73AF /* Pods-VGLabelExample-acknowledgements.markdown */,
+				9938C8B60319297795E435250EED9DA9 /* Pods-VGLabelExample-acknowledgements.plist */,
+				62AF34AF2FC49B2A1266EE00DFBB612A /* Pods-VGLabelExample-dummy.m */,
+				85E941F7849E542B6D9CADA009AC1A7A /* Pods-VGLabelExample-frameworks.sh */,
+				E4606291B2BA23007F9B2B3235145AD7 /* Pods-VGLabelExample-resources.sh */,
+				B6BA084B8F7B9BB99C28129C1AD96E9E /* Pods-VGLabelExample-umbrella.h */,
+				712D81D093D2CA9ED357E2DE38234CFD /* Pods-VGLabelExample.debug.xcconfig */,
+				073D2EBEE28DE7375C3AA5F4062453C2 /* Pods-VGLabelExample.release.xcconfig */,
+			);
+			name = "Pods-VGLabelExample";
+			path = "Target Support Files/Pods-VGLabelExample";
+			sourceTree = "<group>";
+		};
+		BD2E62D4B427421D2C02B5CF5926BBAA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D67B7EDE910157280D070D64B7B09134 /* Info.plist */,
+				6C0A2B80982132B3D2923183BF8B3561 /* VGLabel.modulemap */,
+				7065F850E6D23CC9FFAC111EDAF247BD /* VGLabel.xcconfig */,
+				6A5AD2ADDE208D107709165F9A08B07E /* VGLabel-dummy.m */,
+				9766EDB9D9B0C7B5FC09DE43B3B5DEAF /* VGLabel-prefix.pch */,
+				896253AB58BDAB843D517158B6FC3500 /* VGLabel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "VGLabelExample/Pods/Target Support Files/VGLabel";
+			sourceTree = "<group>";
+		};
+		E4E6DA114CF099404B3182BC5B3FD31F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5487D1E03D96B55315BC235DF679A7D /* VGLabel */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		E5487D1E03D96B55315BC235DF679A7D /* VGLabel */ = {
+			isa = PBXGroup;
+			children = (
+				80C61E0CD85AFD405D1BB74ED3487425 /* CFArray+Sequence.swift */,
+				72EC2BF6D9E8B394ACD954E654CAEEB0 /* VGLabel.swift */,
+				364C839CCD4D93AADAA2921B4D211046 /* VGLabelButton.swift */,
+				D1569555E57013850BB6C409AD5DCA82 /* VGLabelComponent.swift */,
+				B078F69A5318C90C47E1DD918A5CA3D6 /* VGStringExtensions.swift */,
+				BD2E62D4B427421D2C02B5CF5926BBAA /* Support Files */,
+			);
+			name = VGLabel;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		F088A4237FF575009007CB3F93218B78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C18C14CC1D964C6B03B53CD177094EE7 /* Pods_VGLabelExample.framework */,
+				0E77CA3E66A914C0ED8AB5EB5C87DAA3 /* VGLabel.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF1CA95E532A8F990E19506982FA04EE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C55C580E1FC5B6E9F442FE42A9553FEA /* CoreText.framework */,
+				A7AF639F48630A369AAB591B5B339CC8 /* Foundation.framework */,
+				27BE1AF8CEE8818CBCFD0010AE8BEE51 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36781FA909C61BC22E09C649F222F389 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6763FC23E3F4073F93B021EEB1CD38A4 /* VGLabel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F1792855BED6E677B6B3B4228F6FFD2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6808DC538201F42AF5AEB90D4EC87F66 /* Pods-VGLabelExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3EC6496CF0DD725C58AACD1908E13DB5 /* Pods-VGLabelExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C49C4EF5631E7A1BAE3ECA027F88999B /* Build configuration list for PBXNativeTarget "Pods-VGLabelExample" */;
+			buildPhases = (
+				278359821669CD83B3C1ED968D7DBDCE /* Sources */,
+				31BBE75055DDCC46C685AE5DB6EF73C0 /* Frameworks */,
+				5F1792855BED6E677B6B3B4228F6FFD2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAD5BE89225CD6C13819CF4911AADD2F /* PBXTargetDependency */,
+			);
+			name = "Pods-VGLabelExample";
+			productName = "Pods-VGLabelExample";
+			productReference = C18C14CC1D964C6B03B53CD177094EE7 /* Pods_VGLabelExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F2125E20C53C5C6BD77EAC69016E8B97 /* VGLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F04F256F8C7690CDAEF3C1D70F073914 /* Build configuration list for PBXNativeTarget "VGLabel" */;
+			buildPhases = (
+				0BF347840F6C8E51B7828EE0AA7CBAA4 /* Sources */,
+				0FC4B55C7EB042756D74E9E139C9BED3 /* Frameworks */,
+				36781FA909C61BC22E09C649F222F389 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VGLabel;
+			productName = VGLabel;
+			productReference = 0E77CA3E66A914C0ED8AB5EB5C87DAA3 /* VGLabel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = F088A4237FF575009007CB3F93218B78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EC6496CF0DD725C58AACD1908E13DB5 /* Pods-VGLabelExample */,
+				F2125E20C53C5C6BD77EAC69016E8B97 /* VGLabel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0BF347840F6C8E51B7828EE0AA7CBAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E469BF848054ECB4133BB5122CFFB6 /* CFArray+Sequence.swift in Sources */,
+				BE86719E09EAF619A2756C32F8986869 /* VGLabel-dummy.m in Sources */,
+				F6CA7BD9A60B4E9DC7690512E370CA96 /* VGLabel.swift in Sources */,
+				ABB819F9736125A683C79399B9886989 /* VGLabelButton.swift in Sources */,
+				279BAE59AECE52926D61DA69B10B48AF /* VGLabelComponent.swift in Sources */,
+				44C69249F20DE5025124C9F6085E5AD7 /* VGStringExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		278359821669CD83B3C1ED968D7DBDCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95BCF05E7835F2C2CD929764C5D838EA /* Pods-VGLabelExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAD5BE89225CD6C13819CF4911AADD2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VGLabel;
+			target = F2125E20C53C5C6BD77EAC69016E8B97 /* VGLabel */;
+			targetProxy = 9E4C2802B2B77DE68D81F165F873D143 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		27501F11F0FE65E4E1139260F6855257 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 073D2EBEE28DE7375C3AA5F4062453C2 /* Pods-VGLabelExample.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VGLabelExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VGLabelExample/Pods-VGLabelExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VGLabelExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A323353E9BBEFD0E7A79198A1071F5FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7065F850E6D23CC9FFAC111EDAF247BD /* VGLabel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VGLabel/VGLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VGLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VGLabel/VGLabel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = VGLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C19734D549A8C0C7E3A58E899F0E1F6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 712D81D093D2CA9ED357E2DE38234CFD /* Pods-VGLabelExample.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-VGLabelExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VGLabelExample/Pods-VGLabelExample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_VGLabelExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C458BBE2DC40A078FDEE1F6634E9F31B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7065F850E6D23CC9FFAC111EDAF247BD /* VGLabel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VGLabel/VGLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VGLabel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VGLabel/VGLabel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = VGLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */,
+				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C49C4EF5631E7A1BAE3ECA027F88999B /* Build configuration list for PBXNativeTarget "Pods-VGLabelExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C19734D549A8C0C7E3A58E899F0E1F6B /* Debug */,
+				27501F11F0FE65E4E1139260F6855257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F04F256F8C7690CDAEF3C1D70F073914 /* Build configuration list for PBXNativeTarget "VGLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C458BBE2DC40A078FDEE1F6634E9F31B /* Debug */,
+				A323353E9BBEFD0E7A79198A1071F5FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,15 +1,15 @@
 //
-//  VGLabelTests.swift
-//  VGLabelTests
+//  VGLabelExampleTests.swift
+//  VGLabelExampleTests
 //
 //  Created by Vein on 2017/11/15.
 //  Copyright © 2017年 Vein. All rights reserved.
 //
 
 import XCTest
-@testable import VGLabel
+@testable import VGLabelExample
 
-class VGLabelTests: XCTestCase {
+class VGLabelExampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

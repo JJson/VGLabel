@@ -1,0 +1,6 @@
+framework module Pods_VGLabelExample {
+  umbrella header "Pods-VGLabelExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  VGLabel
+//  VGLabelExample
 //
-//  Created by Vein on 2017/11/7.
+//  Created by Vein on 2017/11/15.
 //  Copyright © 2017年 Vein. All rights reserved.
 //
 
