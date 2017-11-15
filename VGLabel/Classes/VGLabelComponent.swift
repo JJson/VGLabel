@@ -78,10 +78,10 @@ public class VGLabelExtractedComponent: NSObject {
             
             if position != NSNotFound {
                 if delimiter.range(of: "<p")?.lowerBound.encodedOffset == 0 {
-                    let nsRange = NSRange(location: lastPosition, length: position + delimiter.characters.count - lastPosition)
+                    let nsRange = NSRange(location: lastPosition, length: position + delimiter.count - lastPosition)
                     styleData = (styleData as NSString).replacingOccurrences(of: delimiter, with: paragraphReplacement, options: .caseInsensitive, range: nsRange)
                 } else {
-                    let nsRange = NSRange(location: lastPosition, length: position + delimiter.characters.count - lastPosition)
+                    let nsRange = NSRange(location: lastPosition, length: position + delimiter.count - lastPosition)
                     styleData = (styleData as NSString).replacingOccurrences(of: delimiter, with: "", options: .caseInsensitive, range: nsRange)
                 }
                 
@@ -94,7 +94,7 @@ public class VGLabelExtractedComponent: NSObject {
                 tag = text?.substring(from: 2)
                 if position != NSNotFound {
                     for component in components.reversed() {
-                        if component.text.characters.count == 0, component.tagLabel == tag {
+                        if component.text.count == 0, component.tagLabel == tag {
                             let text = (styleData as NSString).substring(with: NSRange(location: component.position, length: position - component.position))
                             component.text = text
                             break
@@ -116,7 +116,7 @@ public class VGLabelExtractedComponent: NSObject {
                                 // Trim " charactere
                                 var value = (pair[1...pair.count - 1]).joined(separator: "=")
                                 value = (value as NSString).replacingOccurrences(of: "\"", with: "", options: .literal, range: NSRange(location: 0, length: 1))
-                                value = (value as NSString).replacingOccurrences(of: "\"", with: "", options: .literal, range: NSRange(location: value.characters.count-1, length: 1))
+                                value = (value as NSString).replacingOccurrences(of: "\"", with: "", options: .literal, range: NSRange(location: value.count-1, length: 1))
                                 
                                 attributes[key] = value
                             } else if pair.count == 1 {

@@ -107,7 +107,7 @@
 		338EA7701FB18EF40029AD8F /* VGLabel */ = {
 			isa = PBXGroup;
 			children = (
-				338EA79F1FB18F670029AD8F /* Class */,
+				338EA79F1FB18F670029AD8F /* Classes */,
 				338EA7711FB18EF40029AD8F /* AppDelegate.swift */,
 				338EA7731FB18EF40029AD8F /* ViewController.swift */,
 				338EA7751FB18EF40029AD8F /* Main.storyboard */,
@@ -136,7 +136,7 @@
 			path = VGLabelUITests;
 			sourceTree = "<group>";
 		};
-		338EA79F1FB18F670029AD8F /* Class */ = {
+		338EA79F1FB18F670029AD8F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				338EA7A01FB18F7C0029AD8F /* VGLabel.swift */,
@@ -145,7 +145,7 @@
 				333A9E331FB2D78F006A96A1 /* VGStringExtensions.swift */,
 				33FD6BF81FB424A80022AE02 /* CFArray+Sequence.swift */,
 			);
-			path = Class;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

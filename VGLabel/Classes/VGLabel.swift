@@ -200,25 +200,25 @@ open class VGLabel: UIView {
                 
                 if component.tagLabel?.caseInsensitiveCompare("i") == .orderedSame {
                     // make font italic
-                    applyItalicStyle(attributedString, position: component.position, length: component.text.characters.count)
+                    applyItalicStyle(attributedString, position: component.position, length: component.text.count)
                 } else if component.tagLabel?.caseInsensitiveCompare("b") == .orderedSame {
                     // make font bold
-                    applyBoldStyle(attributedString, position: component.position, length: component.text.characters.count)
+                    applyBoldStyle(attributedString, position: component.position, length: component.text.count)
                 } else if component.tagLabel?.caseInsensitiveCompare("bi") == .orderedSame {
-                    applyBoldItalicStyle(attributedString, position: component.position, length: component.text.characters.count)
+                    applyBoldItalicStyle(attributedString, position: component.position, length: component.text.count)
                 } else if component.tagLabel?.caseInsensitiveCompare("a") == .orderedSame {
                     if currentSelectedButtonComponentIndex == index {
                         if let selectedLink = selectedLinkAttributes {
-                            applyFontAttributes(selectedLink, text: attributedString, position: component.position, length: component.text.characters.count)
+                            applyFontAttributes(selectedLink, text: attributedString, position: component.position, length: component.text.count)
                         } else {
-                            applyBoldStyle(attributedString, position: component.position, length: component.text.characters.count)
-                            applyColor("#FF0000", text: attributedString, position: component.position, length: component.text.characters.count)
+                            applyBoldStyle(attributedString, position: component.position, length: component.text.count)
+                            applyColor("#FF0000", text: attributedString, position: component.position, length: component.text.count)
                         }
                     } else {
                         if let linkAttribute = linkAttributes {
-                            applyFontAttributes(linkAttribute, text: attributedString, position:component.position, length: component.text.characters.count)
+                            applyFontAttributes(linkAttribute, text: attributedString, position:component.position, length: component.text.count)
                         } else {
-                            applySingleUnderlineText(attributedString, position: component.position, length: component.text.characters.count)
+                            applySingleUnderlineText(attributedString, position: component.position, length: component.text.count)
                         }
                     }
                     
@@ -232,20 +232,20 @@ open class VGLabel: UIView {
                     component.tagLabel?.caseInsensitiveCompare("uu") == .orderedSame {
                     // Underline
                     if component.tagLabel?.caseInsensitiveCompare("u") == .orderedSame {
-                        applySingleUnderlineText(attributedString, position: component.position, length: component.text.characters.count)
+                        applySingleUnderlineText(attributedString, position: component.position, length: component.text.count)
                     } else {
-                        applyDoubleUnderlineText(attributedString, position: component.position, length: component.text.characters.count)
+                        applyDoubleUnderlineText(attributedString, position: component.position, length: component.text.count)
                     }
                     
                     if let color = component.attributes?["color"] {
-                        applyUnderlineColor(attributedString, attributeValue: color, position: component.position, length: component.text.characters.count)
+                        applyUnderlineColor(attributedString, attributeValue: color, position: component.position, length: component.text.count)
                     }
                 } else if component.tagLabel?.caseInsensitiveCompare("font") == .orderedSame {
-                    applyFontAttributes(component.attributes, text: attributedString, position: component.position, length: component.text.characters.count)
+                    applyFontAttributes(component.attributes, text: attributedString, position: component.position, length: component.text.count)
                 } else if component.tagLabel?.caseInsensitiveCompare("p") == .orderedSame {
-                    applyParagraphStyle(text: attributedString, attributes: component.attributes, position: component.position, length: component.text.characters.count)
+                    applyParagraphStyle(text: attributedString, attributes: component.attributes, position: component.position, length: component.text.count)
                 } else if component.tagLabel?.caseInsensitiveCompare("center") == .orderedSame {
-                    applyCenterStyle(text: attributedString, position: component.position, length: component.text.characters.count)
+                    applyCenterStyle(text: attributedString, position: component.position, length: component.text.count)
                 }
             }
             
@@ -263,7 +263,7 @@ open class VGLabel: UIView {
             
             var range = CFRange()
             let constraint = CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude)
-            optimumSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRange(location: 0, length: (plainText?.characters.count)!), nil, constraint, &range)
+            optimumSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRange(location: 0, length: (plainText?.count)!), nil, constraint, &range)
             
             if currentSelectedButtonComponentIndex == -1 {
                 // only check for linkable items the first time, not when it's being redrawn on button pressed
@@ -284,12 +284,12 @@ open class VGLabel: UIView {
                         CTFrameGetLineOrigins(frame, CFRange(location: index, length: 1), &origin)
                         
                         if (linkableComponent.position < lineRange.location &&
-                            linkableComponent.position + linkableComponent.text.characters.count > lineRange.location) ||
+                            linkableComponent.position + linkableComponent.text.count > lineRange.location) ||
                             (linkableComponent.position >= lineRange.location && linkableComponent.position < lineRange.location + lineRange.length) {
                             var secondaryOffset: CGFloat = 0.0
                             let line: CTLine = unsafeBitCast(CFArrayGetValueAtIndex(frameLines, index), to: CTLine.self)
                             let primaryOffset = CTLineGetOffsetForStringIndex(line, linkableComponent.position, &secondaryOffset)
-                            let primaryOffset2 = CTLineGetOffsetForStringIndex(line, linkableComponent.position + linkableComponent.text.characters.count, nil)
+                            let primaryOffset2 = CTLineGetOffsetForStringIndex(line, linkableComponent.position + linkableComponent.text.count, nil)
                             
                             let buttonWidth = primaryOffset2 - primaryOffset
                             let button = VGLabelButton(frame: CGRect(x: primaryOffset + origin.x, y: height, width: buttonWidth, height: ascent + descent))
