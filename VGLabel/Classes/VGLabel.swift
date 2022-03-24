@@ -445,10 +445,10 @@ open class VGLabel: UIView {
     
     func applyBoldStyle(_ text: CFMutableAttributedString, position: Int, length: Int) {
         let actualTypeRef: CFTypeRef = CFAttributedStringGetAttribute(text, position, kCTFontAttributeName, nil)
-        var boldFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont, 0.0, nil, .boldTrait, .boldTrait)
+        var boldFont = CTFontCreateCopyWithSymbolicTraits(actualTypeRef as! CTFont, 0.0, nil, .traitBold, .traitBold)
         if let ctFont = boldFont {
             // fallback to system bold font
-            let uiFont = UIFont.italicSystemFont(ofSize: CTFontGetSize(ctFont))
+            let uiFont = UIFont.boldSystemFont(ofSize: CTFontGetSize(ctFont))
             boldFont = CTFontCreateWithName(uiFont.fontName as CFString, uiFont.pointSize, nil)
         }
         
@@ -509,8 +509,10 @@ open class VGLabel: UIView {
             let fontSize = Float(size)
             aFont = UIFont(name: fontName, size: CGFloat(fontSize!))
         } else if attributes?["face"] == nil, let size = attributes?["size"] {
+            let actualTypeRef = CFAttributedStringGetAttribute(text, position, kCTFontAttributeName, nil)
+            let fontName = CTFontCopyPostScriptName(actualTypeRef as! CTFont)
             let fontSize = Float(size)
-            aFont = UIFont(name: self.font.fontName, size: CGFloat(fontSize!))
+            aFont = UIFont(name: fontName as String, size: CGFloat(fontSize!))
         }
         
         if let font = aFont {
