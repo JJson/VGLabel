@@ -93,12 +93,23 @@ public class VGLabelExtractedComponent: NSObject {
                 // end of tag
                 tag = text?.substring(from: 2)
                 if position != NSNotFound {
-                    for component in components.reversed() {
+                    var foundComponent: VGLabelComponent?
+                    var foundIndex = -1
+                    for (index, component) in components.reversed().enumerated() {
                         if component.text.count == 0, component.tagLabel == tag {
-                            let text = (styleData as NSString).substring(with: NSRange(location: component.position, length: position - component.position))
-                            component.text = text
+                            foundComponent = component
+                            foundIndex = components.count - 1 - index
                             break
                         }
+                    }
+                    if let component = foundComponent {
+                            let text = (styleData as NSString).substring(with: NSRange(location: component.position, length: position - component.position))
+                        if text.count > 0 {
+                            component.text = text
+                        } else {
+                            components.remove(at: foundIndex)
+                        }
+                        
                     }
                 }
             } else {
